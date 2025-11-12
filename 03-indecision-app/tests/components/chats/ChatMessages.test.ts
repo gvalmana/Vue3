@@ -22,7 +22,7 @@ describe('<ChatMessages/>', () => {
     chatRef.scrollTo = scrollToMock;
 
     await wrapper.setProps({
-        messages: [...messages, { id: 3, message: 'Hey', isMine: true }],
+        messages: [...messages, { id: 4, message: 'Hey', isMine: true }],
       });
     await new Promise(resolve => setTimeout(resolve, 150));
     expect(scrollToMock).toHaveBeenCalled();
