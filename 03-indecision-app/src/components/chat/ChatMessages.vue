@@ -18,7 +18,7 @@ interface Props {
 const props = defineProps<Props>();
 const chatRef = ref<HTMLDivElement | null>(null);
 
-watch(props.messages, () => {
+watch(props, () => {
   setTimeout(() => {
     chatRef.value?.scrollTo({
       top: chatRef.value.scrollHeight,
