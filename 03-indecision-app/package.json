@@ -15,7 +15,8 @@
     "lint": "eslint . --fix --cache",
     "format": "prettier --write src/",
     "test:unit": "vitest",
-    "test": "vitest --watch=false"
+    "test": "vitest --watch=false",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "vue": "^3.5.22"
@@ -24,6 +25,7 @@
     "@tsconfig/node22": "^22.0.2",
     "@types/node": "^22.18.11",
     "@vitejs/plugin-vue": "^6.0.1",
+    "@vitest/coverage-v8": "^4.0.6",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.6.0",
     "@vue/test-utils": "^2.4.6",

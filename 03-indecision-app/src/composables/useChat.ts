@@ -20,7 +20,7 @@ export const useChat = () => {
     }
   };
 
-  const onMessageHandler = async (message: string) => {
+  const onMessage = async (message: string) => {
     if (message.length === 0) return;
     messages.value.push({
       id: new Date().getTime(),
@@ -43,6 +43,6 @@ export const useChat = () => {
     //props
     messages,
     //methods
-    onMessageHandler,
+    onMessage,
   };
 };
