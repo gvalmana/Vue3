@@ -1,14 +1,34 @@
 <template>
-  <section v-if="false" class="flex flex-col items-center justify-center h-screen w-screen">
+  <section
+    v-if="isLoading || randomPokemon?.id === null"
+    class="flex flex-col items-center justify-center h-screen w-screen"
+  >
     <h1 class="text-3xl">Espere por favor...</h1>
     <h3 class="animate-pulse">Cargando pokemons...</h3>
   </section>
-  <section class="flex flex-col items-center justify-center h-screen w-screen">
+  <section v-else class="flex flex-col items-center justify-center h-screen w-screen">
     <h1 class="m-5">Quién es ese Pokémon?</h1>
+    <div class="h-20">
+      <button
+        v-if="gameStatus !== GameStatus.Playing"
+        @click="getNextRound(4)"
+        class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-700 transition-all"
+      >
+        Próxima ronda
+      </button>
+    </div>
     <!-- Pokemin Picture -->
-    <PokemonPicture />
+    <PokemonPicture
+      :pokemon-id="randomPokemon?.id ?? 0"
+      :show-pokemon="gameStatus !== GameStatus.Playing"
+    />
     <!-- Pokemon Options -->
-    <PokemonOptions />
+    <PokemonOptions
+      :options="options"
+      :block-selection="gameStatus !== GameStatus.Playing"
+      @selected-option="checkAnswer"
+      :correct-answer="randomPokemon?.id"
+    />
   </section>
 </template>
 
@@ -16,6 +36,14 @@
 import PokemonPicture from '../components/PokemonPicture.vue';
 import PokemonOptions from '../components/PokemonOptions.vue';
 import { usePokemonGame } from '../composables/usePokemonGame';
+import { GameStatus } from '../interfaces';
 
-const { gameStatus } = usePokemonGame();
+const {
+  isLoading,
+  randomPokemon,
+  gameStatus,
+  pokemonOptions: options,
+  checkAnswer,
+  getNextRound,
+} = usePokemonGame();
 </script>
