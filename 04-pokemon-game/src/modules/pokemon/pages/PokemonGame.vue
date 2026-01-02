@@ -1,6 +1,6 @@
 <template>
   <section
-    v-if="isLoading || randomPokemon?.id === null"
+    v-if="isLoading || randomPokemon?.id === undefined"
     class="flex flex-col items-center justify-center h-screen w-screen"
   >
     <h1 class="text-3xl">Espere por favor...</h1>
@@ -19,7 +19,7 @@
     </div>
     <!-- Pokemin Picture -->
     <PokemonPicture
-      :pokemon-id="randomPokemon?.id ?? 0"
+      :pokemon-id="randomPokemon.id"
       :show-pokemon="gameStatus !== GameStatus.Playing"
     />
     <!-- Pokemon Options -->
@@ -27,7 +27,7 @@
       :options="options"
       :block-selection="gameStatus !== GameStatus.Playing"
       @selected-option="checkAnswer"
-      :correct-answer="randomPokemon?.id"
+      :correct-answer="randomPokemon.id"
     />
   </section>
 </template>
