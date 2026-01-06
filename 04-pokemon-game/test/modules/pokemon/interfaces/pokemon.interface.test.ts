@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { Pokemon } from '../../../../src/modules/pokemon/interfaces/pokemon.interface';
+import { Pokemon } from '@pokemon/interfaces/pokemon.interface';
 
 describe('Pokemon Interface', () => {
   const pokemon: Pokemon = { id: 1, name: 'pikachu' };

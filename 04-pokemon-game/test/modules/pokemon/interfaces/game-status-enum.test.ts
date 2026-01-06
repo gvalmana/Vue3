@@ -1,5 +1,5 @@
 import { expect, test, describe } from "vitest";
-import { GameStatus } from '../../../../src/modules/pokemon/interfaces/game-status.enum';
+import { GameStatus } from '@pokemon/interfaces/game-status.enum';
 
 describe('GameStatus Enum', () => {
   test('should have a value of playing', () => {

@@ -1,6 +1,6 @@
 import { expect, test, describe } from 'vitest';
 import { mount } from '@vue/test-utils';
-import PokemonPicture from '../../../../src/modules/pokemon/components/PokemonPicture.vue';
+import PokemonPicture from '@pokemon/components/PokemonPicture.vue';
 
 describe('<PokemonPicture />', () => {
   const pokemonId = 25;
