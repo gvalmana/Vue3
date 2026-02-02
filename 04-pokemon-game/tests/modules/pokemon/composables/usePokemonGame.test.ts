@@ -13,12 +13,10 @@ const mockPokemonsApi = new MockAdapter(pokemonApi);
 mockPokemonsApi.onGet('/?limit=151').reply(200,{results: pokemonListFake});
 
 vi.mock('canvas-confetti', () => ({
-    default: {
-        confetti: vi.fn(),
-    },
+    default: vi.fn(),
 }));
 
-describe('usePokemonGame', () => {
+describe('usePokemonGame Composable', () => {
     beforeEach(() => {
         vi.restoreAllMocks();
     });

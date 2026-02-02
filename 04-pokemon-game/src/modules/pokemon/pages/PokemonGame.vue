@@ -3,7 +3,7 @@
     v-if="isLoading || randomPokemon?.id === undefined"
     class="flex flex-col items-center justify-center h-screen w-screen"
   >
-    <h1 class="text-3xl">Espere por favor...</h1>
+    <h1 class="text-3xl">Espere por favor</h1>
     <h3 class="animate-pulse">Cargando pokemons...</h3>
   </section>
   <section v-else class="flex flex-col items-center justify-center h-screen w-screen">
@@ -13,8 +13,9 @@
         v-if="gameStatus !== GameStatus.Playing"
         @click="getNextRound(4)"
         class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-700 transition-all"
+        data-testid="new-game-button"
       >
-        Próxima ronda
+        Jugar de nuevo?
       </button>
     </div>
     <!-- Pokemin Picture -->
