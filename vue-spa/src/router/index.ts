@@ -14,19 +14,28 @@ export const router = createRouter({
                     path: '/', component: HomePage, name: 'home',
                 },
                 {
-                    path: '/features', component: () => import('@/modules/landing/pages/FeaturesPage.vue'), name: 'features',
+                    path: 'features', component: () => import('@/modules/landing/pages/FeaturesPage.vue'), name: 'features',
                 },
                 {
-                    path: '/pricing', component: () => import('@/modules/landing/pages/PricingPage.vue'), name: 'pricing',
+                    path: 'pricing', component: () => import('@/modules/landing/pages/PricingPage.vue'), name: 'pricing',
                 },
                 {
-                    path: '/contact', component: () => import('@/modules/landing/pages/ContactPage.vue'), name: 'contact',
+                    path: 'contact', component: () => import('@/modules/landing/pages/ContactPage.vue'), name: 'contact',
                 },
             ]
         },
         // Auth
         {
-            path: '/auth', component: () => import('@/modules/auth/pages/LoginPage.vue'), name: 'login',
+            path: '/auth', component: () => import('@/modules/auth/layouts/AuthLayout.vue'), name: 'auth',
+            redirect: { name: 'login' },
+            children: [
+                {
+                    path: 'login', component: () => import('@/modules/auth/pages/LoginPage.vue'), name: 'login',
+                },
+                {
+                    path: 'register', component: () => import('@/modules/auth/pages/RegisterPage.vue'), name: 'register',
+                },
+            ]
         }
     ],
 });
