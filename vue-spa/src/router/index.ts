@@ -3,6 +3,7 @@ import PricingPage from "@/modules/landing/pages/PricingPage.vue";
 import ContactPage from "@/modules/landing/pages/ContactPage.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import LandingLayout from "@/modules/landing/layouts/LandingLayout.vue";
+import NotFound404 from "@/modules/common/pages/NotFound404.vue";
 
 export const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +23,9 @@ export const router = createRouter({
                 {
                     path: 'contact', component: () => import('@/modules/landing/pages/ContactPage.vue'), name: 'contact',
                 },
+                {
+                    path: 'pokemon/:id', component: () => import('@/modules/pokemons/pages/PokemonPage.vue'), name: 'pokemon', props: true,
+                }
             ]
         },
         // Auth
@@ -36,7 +40,8 @@ export const router = createRouter({
                     path: 'register', component: () => import('@/modules/auth/pages/RegisterPage.vue'), name: 'register',
                 },
             ]
-        }
+        },
+        { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound404 },
     ],
 });
 
