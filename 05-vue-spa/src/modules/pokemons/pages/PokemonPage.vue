@@ -21,8 +21,7 @@
 
 <script setup lang="ts">
 interface Props {
-  id: string
+  id: number
 }
-const props = defineProps<Props>()
-console.log(props.id)
+defineProps<Props>()
 </script>
