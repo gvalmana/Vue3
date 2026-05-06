@@ -4,5 +4,14 @@
     <p class="mx-auto max-w-[600px] text-gray-500 md:text-xl">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </p>
+    <p>Counter: {{ counter }}</p>
+    <button
+      @click="counter++"
+      class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4"
+    >
+      Increment +1
+    </button>
   </div>
 </template>
+
+<script src="./HomePage.ts" lang="ts"></script>

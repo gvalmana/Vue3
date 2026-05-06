@@ -48,15 +48,13 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
-
+import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
 const onLogin = () => {
-  console.log('Login button clicked')
-
   localStorage.setItem('userId', 'ABC-123')
-  router.replace({ name: 'home' })
+  const lastPath = localStorage.getItem('lastPath') ?? '/'
+  router.replace(lastPath)
 }
 </script>

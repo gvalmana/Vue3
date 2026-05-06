@@ -4,6 +4,7 @@ import ContactPage from '@/modules/landing/pages/ContactPage.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import LandingLayout from '@/modules/landing/layouts/LandingLayout.vue'
 import NotFound404 from '@/modules/common/pages/NotFound404.vue'
+import isAuthenticatedGuard from '@/modules/auth/guards/is-authenticated.guard'
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -37,6 +38,7 @@ export const router = createRouter({
           path: 'pokemon/:id',
           component: () => import('@/modules/pokemons/pages/PokemonPage.vue'),
           name: 'pokemon',
+          beforeEnter:[isAuthenticatedGuard],
           props: (route) => {
             const id = Number(route.params.id)
             return isNaN(id) ? { id: 1 } : { id }
