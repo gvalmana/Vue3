@@ -1,7 +1,7 @@
 <template>
   <section class="flex flex-col">
     <h1 class="text-3xl font-bold">
-      Pokemon <small class="text-blue-500"> #{{ id }}</small>
+      Pokemon <small class="text-blue-500">#{{ id }}</small>
     </h1>
     <img
       :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`"
