@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col">
-    <top-menu />
+    <TopMenu />
     <main class="flex flex-row">
-      <side-menu />
-      <router-view />
+      <SideMenu />
+      <RouterView />
     </main>
   </div>
 </template>
