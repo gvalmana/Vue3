@@ -14,7 +14,7 @@
           />
           <div class="flex justify-end mt-5">
             <button @click="$emit('close')" class="btn mr-4">Close</button>
-            <button @click="$emit('close')" class="btn mr-4">Close</button>
+            <button @click="$emit('close')" class="btn mr-4">Aceptar</button>
           </div>
         </form>
       </div>
