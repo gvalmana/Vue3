@@ -1,5 +1,5 @@
 <template>
-  <dialog class="modal" :open="true">
+  <dialog class="modal" :open="open">
     <div class="modal-box">
       <h3 class="font-bold text-lg">{{ title }}</h3>
       <p v-if="subTitle" class="py-4">{{ subTitle }}</p>
@@ -8,13 +8,13 @@
           <input
             ref="inputRef"
             type="text"
+            :placeholder="placeholder ?? 'Ingrese un valor'"
             class="input input-bordered input-primary w-full flex-1"
             v-model="inputValue"
-            :placeholder="placeholder ?? 'Ingrese un valor'"
           />
           <div class="flex justify-end mt-5">
-            <button class="btn mr-4" @click="$emit('close')">Close</button>
-            <button type="submit" class="btn btn-primary">Aceptar</button>
+            <button @click="$emit('close')" class="btn mr-4">Close</button>
+            <button @click="$emit('close')" class="btn mr-4">Close</button>
           </div>
         </form>
       </div>

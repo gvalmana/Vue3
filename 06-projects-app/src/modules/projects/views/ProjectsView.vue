@@ -41,6 +41,6 @@ import { ref } from 'vue';
 
 const modalOpen = ref(false);
 const onNewValue = (projectName: string) => {
-  console.log(projectName);
+  console.log({ projectName });
 };
 </script>
