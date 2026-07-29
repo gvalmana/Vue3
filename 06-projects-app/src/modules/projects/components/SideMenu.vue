@@ -18,7 +18,7 @@
         </template>
         <template>
           <li>
-            <RouterLink :to="`/projects/${project.id}`">{{ project.name }}</RouterLink>
+            <RouterLink :to="`/project/${project.id}`">{{ project.name }}</RouterLink>
           </li>
         </template>
       </li>

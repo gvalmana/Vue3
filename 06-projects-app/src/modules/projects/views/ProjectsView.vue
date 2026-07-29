@@ -31,42 +31,17 @@
     title="Nuevo proyecto"
     sub-title="Dale un nombre único a tu proyecto"
   />
-  <custom-modal :open="customModalOpen">
-    <template #header>
-      <h3 class="font-bold text-lg">Ingrese el nombre del proyecto</h3>
-      <p class="py-4">Dale un nombre único a tu proyecto</p>
-    </template>
-    <template #body>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore optio, atque quod placeat
-        soluta alias in velit quisquam mollitia facere fugiat cumque corrupti non, explicabo earum
-        quo quaerat numquam possimus.
-      </p></template
-    >
-    <template #actions>
-      <div class="flex justify-end mt-5">
-        <button @click="customModalOpen = false" class="btn mr-4">Close</button>
-        <button @click="customModalOpen = false" class="btn mr-4">Aceptar</button>
-      </div>
-    </template>
-  </custom-modal>
   <fab-button @click="modalOpen = true">
     <add-circle />
   </fab-button>
-  <fab-button @click="customModalOpen = true" position="bottom-left">
-    <modal-icon />
-  </fab-button>
 </template>
 <script setup lang="ts">
-import CustomModal from '@/modules/common/components/CustomModal.vue';
 import FabButton from '@/modules/common/components/FabButton.vue';
 import InputModal from '@/modules/common/components/InputModal.vue';
 import AddCircle from '@/modules/common/icons/AddCircle.vue';
-import ModalIcon from '@/modules/common/icons/ModalIcon.vue';
 import { ref } from 'vue';
 import { useProjectsStore } from '../store/projects.store';
 
 const projectStore = useProjectsStore();
 const modalOpen = ref(false);
-const customModalOpen = ref(false);
 </script>
