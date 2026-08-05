@@ -25,9 +25,24 @@ describe('<CustomModal />', () => {
     const wrapper = shallowMount(CustomModal, {
       props: { open: true },
     });
-    const model = wrapper.find('.modal');
-    expect(model.attributes('open')).toBeDefined();
+    const modal = wrapper.find('.modal');
+    const modalBackdrop = wrapper.find('.modal-backdrop');
+    expect(modalBackdrop.exists()).toBeTruthy();
+    console.log(modalBackdrop.classes());
+    expect(modalBackdrop.classes()).toEqual([
+      'modal-backdrop',
+      'fixed',
+      'top-0',
+      'left-0',
+      'z-10',
+      'bg-black',
+      'opacity-50',
+      'w-scree',
+      'h-screen',
+    ]);
+    expect(modal.attributes('open')).toBeDefined();
     await wrapper.setProps({ open: false });
-    expect(model.attributes('open')).toBeUndefined();
+    expect(modal.attributes('open')).toBeUndefined();
+    expect(wrapper.find('.modal-backdrop').exists()).toBeFalsy();
   });
 });
