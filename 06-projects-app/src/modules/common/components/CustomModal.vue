@@ -9,7 +9,7 @@
       <div class="my-5"><slot name="body"></slot></div>
       <div class="border-t border-t-blue-500 pt-2">
         <!-- Actions -->
-        <slot name="actions"></slot>
+        <slot name="footer"></slot>
       </div>
     </div>
   </dialog>
