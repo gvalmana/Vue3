@@ -27,7 +27,6 @@
               <td>{{ task.name }}</td>
               <td>{{ task.completedAt }}</td>
             </tr>
-
             <tr>
               <th></th>
               <td>
